@@ -1,18 +1,18 @@
 {
-  "name": "@opencode-ai/slack",
-  "version": "1.0.199",
-  "type": "module",
-  "scripts": {
-    "dev": "bun run src/index.ts",
-    "typecheck": "tsgo --noEmit"
-  },
-  "dependencies": {
-    "@opencode-ai/sdk": "workspace:*",
-    "@slack/bolt": "^3.17.1"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
-  }
+	"name": "@opencode-ai/slack",
+	"version": "1.0.199",
+	"type": "module",
+	"scripts": {
+		"dev": "bun run src/index.ts",
+		"typecheck": "tsgo --noEmit"
+	},
+	"dependencies": {
+		"@opencode-ai/sdk": "workspace:*",
+		"@slack/bolt": "catalog:utilities"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:runtime",
+		"@typescript/native-preview": "catalog:types",
+		"typescript": "catalog:types"
+	}
 }

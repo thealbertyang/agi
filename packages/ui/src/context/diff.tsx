@@ -1,9 +1,9 @@
-import type { ValidComponent } from "solid-js"
-import { createSimpleContext } from "./helper"
+import { createSimpleContext } from './helper'
+import type { ValidComponent } from 'solid-js'
 
 const ctx = createSimpleContext<ValidComponent, { component: ValidComponent }>({
-  name: "DiffComponent",
-  init: (props) => props.component,
+	name: 'DiffComponent',
+	init: (props) => props.component,
 })
 
 export const DiffComponentProvider = ctx.provider

@@ -1,35 +1,39 @@
 #!/usr/bin/env bun
 
-import { $ } from "bun"
-import path from "path"
-import os from "os"
-import { ZenData } from "../src/model"
+import { ZenData } from '../src/model'
+import { $ } from 'bun'
+import os from 'node:os'
+import path from 'node:path'
 
-const root = path.resolve(process.cwd(), "..", "..", "..")
+const root = path.resolve(process.cwd(), '..', '..', '..')
 const models = await $`bun sst secret list`.cwd(root).text()
 
 // read the line starting with "ZEN_MODELS"
-const lines = models.split("\n")
-const oldValue1 = lines.find((line) => line.startsWith("ZEN_MODELS1"))?.split("=")[1]
-const oldValue2 = lines.find((line) => line.startsWith("ZEN_MODELS2"))?.split("=")[1]
-const oldValue3 = lines.find((line) => line.startsWith("ZEN_MODELS3"))?.split("=")[1]
-const oldValue4 = lines.find((line) => line.startsWith("ZEN_MODELS4"))?.split("=")[1]
-const oldValue5 = lines.find((line) => line.startsWith("ZEN_MODELS5"))?.split("=")[1]
-const oldValue6 = lines.find((line) => line.startsWith("ZEN_MODELS6"))?.split("=")[1]
-if (!oldValue1) throw new Error("ZEN_MODELS1 not found")
-if (!oldValue2) throw new Error("ZEN_MODELS2 not found")
-if (!oldValue3) throw new Error("ZEN_MODELS3 not found")
-if (!oldValue4) throw new Error("ZEN_MODELS4 not found")
-if (!oldValue5) throw new Error("ZEN_MODELS5 not found")
-if (!oldValue6) throw new Error("ZEN_MODELS6 not found")
+const lines = models.split('\n')
+const oldValue1 = lines.find((line) => line.startsWith('ZEN_MODELS1'))?.split('=')[1]
+const oldValue2 = lines.find((line) => line.startsWith('ZEN_MODELS2'))?.split('=')[1]
+const oldValue3 = lines.find((line) => line.startsWith('ZEN_MODELS3'))?.split('=')[1]
+const oldValue4 = lines.find((line) => line.startsWith('ZEN_MODELS4'))?.split('=')[1]
+const oldValue5 = lines.find((line) => line.startsWith('ZEN_MODELS5'))?.split('=')[1]
+const oldValue6 = lines.find((line) => line.startsWith('ZEN_MODELS6'))?.split('=')[1]
+if (!oldValue1) throw new Error('ZEN_MODELS1 not found')
+if (!oldValue2) throw new Error('ZEN_MODELS2 not found')
+if (!oldValue3) throw new Error('ZEN_MODELS3 not found')
+if (!oldValue4) throw new Error('ZEN_MODELS4 not found')
+if (!oldValue5) throw new Error('ZEN_MODELS5 not found')
+if (!oldValue6) throw new Error('ZEN_MODELS6 not found')
 
 // store the prettified json to a temp file
 const filename = `models-${Date.now()}.json`
 const tempFile = Bun.file(path.join(os.tmpdir(), filename))
 await tempFile.write(
-  JSON.stringify(JSON.parse(oldValue1 + oldValue2 + oldValue3 + oldValue4 + oldValue5 + oldValue6), null, 2),
+	JSON.stringify(
+		JSON.parse(oldValue1 + oldValue2 + oldValue3 + oldValue4 + oldValue5 + oldValue6),
+		null,
+		2
+	)
 )
-console.log("tempFile", tempFile.name)
+console.log('tempFile', tempFile.name)
 
 // open temp file in vim and read the file on close
 await $`vim ${tempFile.name}`

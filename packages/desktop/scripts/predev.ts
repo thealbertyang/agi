@@ -1,6 +1,5 @@
-import { $ } from "bun"
-
-import { copyBinaryToSidecarFolder, getCurrentSidecar } from "./utils"
+import { copyBinaryToSidecarFolder, getCurrentSidecar } from './utils'
+import { $ } from 'bun'
 
 const RUST_TARGET = Bun.env.TAURI_ENV_TARGET_TRIPLE
 

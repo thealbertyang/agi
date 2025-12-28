@@ -1,37 +1,37 @@
 {
-  "name": "@opencode-ai/desktop",
-  "private": true,
-  "version": "1.0.199",
-  "type": "module",
-  "scripts": {
-    "typecheck": "tsgo -b",
-    "predev": "bun ./scripts/predev.ts",
-    "dev": "vite",
-    "build": "bun run typecheck && vite build",
-    "preview": "vite preview",
-    "tauri": "tauri"
-  },
-  "dependencies": {
-    "@opencode-ai/app": "workspace:*",
-    "@solid-primitives/storage": "catalog:",
-    "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-dialog": "~2",
-    "@tauri-apps/plugin-opener": "^2",
-    "@tauri-apps/plugin-os": "~2",
-    "@tauri-apps/plugin-process": "~2",
-    "@tauri-apps/plugin-shell": "~2",
-    "@tauri-apps/plugin-store": "~2",
-    "@tauri-apps/plugin-updater": "~2",
-    "@tauri-apps/plugin-http": "~2",
-    "@tauri-apps/plugin-window-state": "~2",
-    "solid-js": "catalog:"
-  },
-  "devDependencies": {
-    "@actions/artifact": "4.0.0",
-    "@tauri-apps/cli": "^2",
-    "@types/bun": "catalog:",
-    "@typescript/native-preview": "catalog:",
-    "typescript": "~5.6.2",
-    "vite": "catalog:"
-  }
+	"name": "@opencode-ai/desktop",
+	"version": "1.0.199",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsgo -b",
+		"predev": "bun ./scripts/predev.ts",
+		"dev": "vite",
+		"build": "bun run typecheck && vite build",
+		"preview": "vite preview",
+		"tauri": "tauri"
+	},
+	"dependencies": {
+		"@opencode-ai/app": "workspace:*",
+		"@solid-primitives/storage": "catalog:utilities",
+		"@tauri-apps/api": "catalog:utilities",
+		"@tauri-apps/plugin-dialog": "catalog:utilities",
+		"@tauri-apps/plugin-http": "catalog:utilities",
+		"@tauri-apps/plugin-opener": "catalog:utilities",
+		"@tauri-apps/plugin-os": "catalog:utilities",
+		"@tauri-apps/plugin-process": "catalog:utilities",
+		"@tauri-apps/plugin-shell": "catalog:utilities",
+		"@tauri-apps/plugin-store": "catalog:utilities",
+		"@tauri-apps/plugin-updater": "catalog:utilities",
+		"@tauri-apps/plugin-window-state": "catalog:utilities",
+		"solid-js": "catalog:utilities"
+	},
+	"devDependencies": {
+		"@actions/artifact": "catalog:utilities",
+		"@tauri-apps/cli": "catalog:utilities",
+		"@types/bun": "catalog:runtime",
+		"@typescript/native-preview": "catalog:types",
+		"typescript": "catalog:types",
+		"vite": "catalog:utilities"
+	}
 }

@@ -1,18 +1,18 @@
-import { z } from "zod"
+import { z } from 'zod'
 
 export type ToolContext = {
-  sessionID: string
-  messageID: string
-  agent: string
-  abort: AbortSignal
+	sessionID: string
+	messageID: string
+	agent: string
+	abort: AbortSignal
 }
 
 export function tool<Args extends z.ZodRawShape>(input: {
-  description: string
-  args: Args
-  execute(args: z.infer<z.ZodObject<Args>>, context: ToolContext): Promise<string>
+	description: string
+	args: Args
+	execute(args: z.infer<z.ZodObject<Args>>, context: ToolContext): Promise<string>
 }) {
-  return input
+	return input
 }
 tool.schema = z
 

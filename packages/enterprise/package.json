@@ -1,41 +1,41 @@
 {
-  "name": "@opencode-ai/enterprise",
-  "version": "1.0.199",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "typecheck": "tsgo --noEmit",
-    "dev": "vite dev",
-    "build": "vite build",
-    "build:cloudflare": "OPENCODE_DEPLOYMENT_TARGET=cloudflare vite build",
-    "start": "vite start"
-  },
-  "dependencies": {
-    "@opencode-ai/util": "workspace:*",
-    "@opencode-ai/ui": "workspace:*",
-    "aws4fetch": "^1.0.20",
-    "@pierre/diffs": "catalog:",
-    "@solidjs/router": "catalog:",
-    "@solidjs/start": "catalog:",
-    "@solidjs/meta": "catalog:",
-    "hono": "catalog:",
-    "hono-openapi": "catalog:",
-    "js-base64": "3.7.7",
-    "luxon": "catalog:",
-    "nitro": "3.0.1-alpha.1",
-    "solid-js": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "catalog:",
-    "@tailwindcss/vite": "catalog:",
-    "@typescript/native-preview": "catalog:",
-    "@types/luxon": "catalog:",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:"
-  },
-  "engines": {
-    "node": ">=22"
-  }
+	"name": "@opencode-ai/enterprise",
+	"version": "1.0.199",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsgo --noEmit",
+		"dev": "vite dev",
+		"build": "vite build",
+		"build:cloudflare": "OPENCODE_DEPLOYMENT_TARGET=cloudflare vite build",
+		"start": "vite start"
+	},
+	"dependencies": {
+		"@opencode-ai/ui": "workspace:*",
+		"@opencode-ai/util": "workspace:*",
+		"@pierre/diffs": "catalog:utilities",
+		"@solidjs/meta": "catalog:utilities",
+		"@solidjs/router": "catalog:utilities",
+		"@solidjs/start": "catalog:utilities",
+		"aws4fetch": "catalog:utilities",
+		"hono": "catalog:utilities",
+		"hono-openapi": "catalog:utilities",
+		"js-base64": "catalog:utilities",
+		"luxon": "catalog:utilities",
+		"nitro": "catalog:utilities",
+		"solid-js": "catalog:utilities",
+		"zod": "catalog:validation"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "catalog:utilities",
+		"@tailwindcss/vite": "catalog:utilities",
+		"@types/luxon": "catalog:types",
+		"@typescript/native-preview": "catalog:types",
+		"tailwindcss": "catalog:frontend",
+		"typescript": "catalog:types",
+		"vite": "catalog:utilities"
+	},
+	"engines": {
+		"node": ">=22"
+	}
 }

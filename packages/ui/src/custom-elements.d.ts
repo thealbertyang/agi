@@ -1,4 +1,4 @@
-import { DIFFS_TAG_NAME } from "@pierre/diffs"
+import type { DIFFS_TAG_NAME } from '@pierre/diffs'
 
 /**
  * TypeScript declaration for the <diffs-container> custom element.
@@ -6,12 +6,10 @@ import { DIFFS_TAG_NAME } from "@pierre/diffs"
  * Required for using the @pierre/diffs web component in .tsx files.
  */
 
-declare module "solid-js" {
-  namespace JSX {
-    interface IntrinsicElements {
-      [DIFFS_TAG_NAME]: HTMLAttributes<HTMLElement>
-    }
-  }
+declare module 'solid-js' {
+	namespace JSX {
+		interface IntrinsicElements {
+			[DIFFS_TAG_NAME]: HTMLAttributes<HTMLElement>
+		}
+	}
 }
-
-export {}

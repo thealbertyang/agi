@@ -1,11 +1,11 @@
-import { SettingsSection } from "./settings-section"
+import { SettingsSection } from './settings-section'
 
 export default function () {
-  return (
-    <div data-page="workspace-[id]">
-      <div data-slot="sections">
-        <SettingsSection />
-      </div>
-    </div>
-  )
+	return (
+		<div data-page="workspace-[id]">
+			<div data-slot="sections">
+				<SettingsSection />
+			</div>
+		</div>
+	)
 }
